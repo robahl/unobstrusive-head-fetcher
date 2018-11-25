@@ -3,6 +3,16 @@ import UrlInput from './UrlInput';
 import './App.scss';
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.handleUrlSubmit = this.handleUrlSubmit.bind(this);
+  }
+
+  handleUrlSubmit(url) {
+    console.log('URL submitted', url);
+  }
+
   render() {
     return (
       <div className="App container">
@@ -10,7 +20,7 @@ class App extends Component {
           <h1 className="col">The head fetcher</h1>
         </div>
         <div className="row">
-          <UrlInput />
+          <UrlInput onSubmit={this.handleUrlSubmit} />
         </div>
       </div>
     );
