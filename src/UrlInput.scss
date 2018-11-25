@@ -1,0 +1,13 @@
+.UrlInput {
+}
+
+input[type='text'] {
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 1.3em;
+  outline: none;
+
+  &:focus {
+    border-color: black;
+  }
+}
