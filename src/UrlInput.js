@@ -27,9 +27,10 @@ export default class UrlInput extends Component {
 
   render() {
     return (
-      <div className="UrlInput col">
+      <div className="UrlInput col-sm col-md-8 offset-md-2">
         <form onSubmit={this.submitUrl}>
           <input
+            placeholder="URL to fetch..."
             type="text"
             value={this.state.url}
             onChange={this.handleUrlChange}
