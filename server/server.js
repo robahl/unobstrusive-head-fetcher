@@ -19,7 +19,6 @@ app.get('/fetch', (req, res) => {
     axios
       .get(url)
       .then(axiosRes => {
-        console.log(axiosRes.headers);
         res.json({ headers: axiosRes.headers });
       })
       .catch(err => {
