@@ -1,3 +1,3 @@
-## The unobstrusive head fetcher
+## The unobstrusive head(er) fetcher
 
-HTTP head fetcher, that easy
+Fetch HTTP headers

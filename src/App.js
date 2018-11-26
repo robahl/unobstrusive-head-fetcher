@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="App container">
         <div className="row">
-          <h1 className="col">The head fetcher</h1>
+          <h1 className="col">The head(er) fetcher</h1>
         </div>
         <div className="row">
           <UrlInput onSubmit={this.handleUrlSubmit} />
