@@ -10,7 +10,12 @@ class App extends Component {
   }
 
   handleUrlSubmit(url) {
-    console.log('URL submitted', url);
+    console.log('Fetching...', url);
+
+    // Make request to local server
+    fetch(`http://localhost:3001/fetch?url=${url}`)
+      .then(res => res.json())
+      .then(jsonRes => this.setState({ header: jsonRes }));
   }
 
   render() {
