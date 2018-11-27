@@ -18,7 +18,7 @@ class App extends Component {
     // Make request to local server
     fetch(`http://localhost:3001/fetch?url=${url}`)
       .then(res => res.json())
-      .then(jsonRes => this.setState({ header: jsonRes }));
+      .then(jsonRes => this.setState({ headers: jsonRes.headers }));
   }
 
   render() {
