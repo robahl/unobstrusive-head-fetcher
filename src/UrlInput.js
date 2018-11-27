@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './UrlInput.scss';
 
 export default class UrlInput extends Component {
-  static URL_REGEXP = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
+  static URL_REGEXP = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i;
 
   constructor() {
     super();
@@ -19,7 +19,7 @@ export default class UrlInput extends Component {
 
   submitUrl(e) {
     e.preventDefault();
-
+    // Check for valid URL
     if (UrlInput.URL_REGEXP.test(this.state.url)) {
       this.props.onSubmit(this.state.url);
     }
