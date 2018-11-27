@@ -1,3 +1,26 @@
 .HeadersViewer {
-  border: 1px solid black;
+  background: rgb(240, 240, 240);
+  border: 1px solid rgb(58, 58, 58);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+    text-align: left;
+  }
+
+  td {
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+}
+
+.key {
+  color: red;
+  width: 30%;
+}
+
+.value {
+  color: blue;
+  width: 70%;
 }
