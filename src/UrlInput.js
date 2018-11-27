@@ -27,7 +27,7 @@ export default class UrlInput extends Component {
 
   render() {
     return (
-      <div className="UrlInput col-sm col-md-8 offset-md-2">
+      <div className="UrlInput col p-0">
         <form onSubmit={this.submitUrl}>
           <input
             placeholder="URL to fetch..."

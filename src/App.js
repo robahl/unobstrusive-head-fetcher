@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import UrlInput from './UrlInput';
+import HeadersViewer from './HeadersViewer';
 import './App.scss';
 
 class App extends Component {
   constructor() {
     super();
+
+    this.state = { headers: {} };
 
     this.handleUrlSubmit = this.handleUrlSubmit.bind(this);
   }
@@ -22,10 +25,17 @@ class App extends Component {
     return (
       <div className="App container">
         <div className="row">
-          <h1 className="col">The head(er) fetcher</h1>
-        </div>
-        <div className="row">
-          <UrlInput onSubmit={this.handleUrlSubmit} />
+          <div className="col-sm col-md-8 offset-md-2">
+            <div className="row">
+              <h1 className="col">The head(er) fetcher</h1>
+            </div>
+            <div className="row">
+              <UrlInput onSubmit={this.handleUrlSubmit} />
+            </div>
+            <div className="row">
+              <HeadersViewer headers={this.state.headers} />
+            </div>
+          </div>
         </div>
       </div>
     );
