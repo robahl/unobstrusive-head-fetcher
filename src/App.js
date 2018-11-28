@@ -4,6 +4,8 @@ import HeadersViewer from './HeadersViewer';
 import './App.scss';
 
 class App extends Component {
+  static SERVER_HOST = 'https://unobstrusive-head-fetcher.herokuapp.com';
+
   constructor() {
     super();
 
@@ -16,7 +18,7 @@ class App extends Component {
     console.log('Fetching...', url);
 
     // Make request to local server
-    fetch(`http://localhost:3001/fetch?url=${url}`)
+    fetch(`${App.SERVER_HOST}/fetch?url=${url}`)
       .then(res => res.json())
       .then(jsonRes => this.setState({ headers: jsonRes.headers }));
   }
