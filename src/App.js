@@ -4,7 +4,7 @@ import HeadersViewer from './HeadersViewer';
 import './App.scss';
 
 class App extends Component {
-  static SERVER_HOST = 'https://unobstrusive-head-fetcher.herokuapp.com/';
+  static SERVER_HOST = 'https://unobstrusive-head-fetcher.herokuapp.com';
 
   constructor() {
     super();
