@@ -1,4 +1,4 @@
-## The unobstrusive head(er) fetcher
+## The unobstrusive headers fetcher
 
 Fetch HTTP headers
 

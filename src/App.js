@@ -34,7 +34,7 @@ class App extends Component {
         <div className="row">
           <div className="col-sm col-md-8 offset-md-2">
             <div className="row">
-              <h1 className="col">The head(er) fetcher</h1>
+              <h1 className="col">The headers fetcher</h1>
             </div>
             <div className="row">
               <UrlInput onSubmit={this.handleUrlSubmit} />
