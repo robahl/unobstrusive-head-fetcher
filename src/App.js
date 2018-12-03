@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UrlInput from './UrlInput';
 import HeadersViewer from './HeadersViewer';
+import Spinner from 'react-spinkit';
 import './App.scss';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = { headers: {} };
+    this.state = { headers: {}, loading: false };
 
     this.handleUrlSubmit = this.handleUrlSubmit.bind(this);
   }
@@ -17,10 +18,14 @@ class App extends Component {
   handleUrlSubmit(url) {
     console.log('Fetching...', url);
 
+    this.setState({ loading: true });
+
     // Make request to local server
     fetch(`${App.SERVER_HOST}/fetch?url=${url}`)
       .then(res => res.json())
-      .then(jsonRes => this.setState({ headers: jsonRes.headers }));
+      .then(jsonRes =>
+        this.setState({ headers: jsonRes.headers, loading: false })
+      );
   }
 
   render() {
@@ -36,6 +41,15 @@ class App extends Component {
             </div>
             <div className="row">
               <HeadersViewer headers={this.state.headers} />
+            </div>
+            <div
+              className="spinner-wrapper"
+              style={this.state.loading ? null : { visibility: 'hidden' }}>
+              <Spinner
+                name="ball-clip-rotate"
+                color="red"
+                className="spinner"
+              />
             </div>
           </div>
         </div>
