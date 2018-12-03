@@ -13,7 +13,13 @@ const HeadersViewer = ({ headers }) => {
 
   return (
     <div className="HeadersViewer col mt-3 p-2">
-      {headersTable.length > 0 ? <table>{headersTable}</table> : emptyMessage}
+      {headersTable.length > 0 ? (
+        <table>
+          <tbody>{headersTable}</tbody>
+        </table>
+      ) : (
+        emptyMessage
+      )}
     </div>
   );
 };
